@@ -138,4 +138,9 @@ describe ('BST.prototype.remove', () => {
     bst.insertNode(rootNode);
     expect(bst.remove(36)).toEqual(false);
   });
+
+  test('it should remove a leaf node', () => {
+    pbst.remove(7);
+    expect(pbst.search(7)).toEqual(false);
+  })
 });

@@ -30,7 +30,13 @@ export default class BST {
       let currentNode = this.root;
       while (true) {
         if (currentNode.data === value) {
-          return true;
+          //ONLY leaf nodes (no L/R children)
+          if(currentNode.left === null && currentNode.right === null){
+            //remove the thing
+            currentNode.data = null;
+          } else {
+            //
+          }
         } else if (currentNode.data > value) {
           currentNode = currentNode.left;
         } else if (currentNode.data < value) {
