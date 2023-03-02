@@ -1,7 +1,7 @@
 import BST from '../src/bst.js';
 import BSTNode from '../src/bst-node.js';
 
-describe('binarySearchTree', () => {
+describe('BST.prototype.insert', () => {
 
   test('should initialize a binary search tree with a root of null', () => {
     let bst = new BST();
@@ -75,7 +75,7 @@ describe('binarySearchTree', () => {
   });
 });
 
-describe('binarySearchTree', () => {
+describe('BST.prototype.search', () => {
 
   const pbst = new BST();
 
@@ -111,5 +111,24 @@ describe('binarySearchTree', () => {
 
   test('it should return true if the tree includes 5', () => {
     expect(pbst.search(5)).toEqual(true);
+  });
+});
+
+describe ('BST.prototype.remove', () => {
+
+  const pbst = new BST();
+
+  beforeEach(() => {
+    pbst.insertNode(new BSTNode(4));
+    pbst.insertNode(new BSTNode(2));
+    pbst.insertNode(new BSTNode(6));
+    pbst.insertNode(new BSTNode(1));
+    pbst.insertNode(new BSTNode(3));
+    pbst.insertNode(new BSTNode(5));
+    pbst.insertNode(new BSTNode(7));  
+  });
+  
+  test('it should return false if the node to be removed does not exist in the tree', () => {
+    expect(pbst.remove(8)).toEqual(false);
   });
 });
