@@ -25,7 +25,7 @@ export default class BST {
 
   remove(value) {
     if (this.root.data === value) {
-      return true;
+      return false;
     } else {
       let currentNode = this.root;
       while (true) {

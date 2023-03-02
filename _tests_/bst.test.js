@@ -131,4 +131,11 @@ describe ('BST.prototype.remove', () => {
   test('it should return false if the node to be removed does not exist in the tree', () => {
     expect(pbst.remove(8)).toEqual(false);
   });
+
+  test('it should return false if it tries to remove the root node', () => {
+    let bst = new BST();
+    let rootNode = new BSTNode(36);
+    bst.insertNode(rootNode);
+    expect(bst.remove(36)).toEqual(false);
+  });
 });
