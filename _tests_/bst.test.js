@@ -142,5 +142,11 @@ describe ('BST.prototype.remove', () => {
   test('it should remove a leaf node', () => {
     pbst.remove(7);
     expect(pbst.search(7)).toEqual(false);
-  })
+  });
+
+  test('it should remove a left child node', () => {
+    pbst.remove(7);
+    pbst.remove(6);
+    expect(pbst.search(6)).toEqual(false);
+  });
 });

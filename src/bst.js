@@ -30,12 +30,19 @@ export default class BST {
       let currentNode = this.root;
       while (true) {
         if (currentNode.data === value) {
+          console.log(currentNode)
           //ONLY leaf nodes (no L/R children)
           if(currentNode.left === null && currentNode.right === null){
-            //remove the thing
             currentNode.data = null;
+          //ONLY has L child
+          } else if(currentNode.left !== null && currentNode.right === null) {
+            console.log('left OK right empty')
+            currentNode = currentNode.left;
+            // currentNode.left = currentNode.left?.left;
+            // currentNode.right = currentNode.left?.right;
           } else {
-            //
+            console.log('didnt remove anything');
+            return false;
           }
         } else if (currentNode.data > value) {
           currentNode = currentNode.left;
